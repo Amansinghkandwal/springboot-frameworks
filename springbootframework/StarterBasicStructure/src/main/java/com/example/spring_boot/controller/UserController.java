@@ -3,6 +3,7 @@ package com.example.spring_boot.controller;
 
 import com.example.spring_boot.model.User;
 import com.example.spring_boot.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,19 +11,16 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
-
 /*
   Response Entity -> we need to improve the api responses to tell the correct status
   HTTP response + Status Code
- */
-
-
-
+*/
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
-    private UserService userService = new UserService();
+    @Autowired
+    private UserService userService;
 
 
 
@@ -35,6 +33,7 @@ public class UserController {
             return ResponseEntity.ok(user);
         }
         return ResponseEntity.status(HttpStatus.CREATED).body(user);
+
     }
 
     @PutMapping
@@ -107,7 +106,7 @@ public class UserController {
     // /search?name=Bob&email=Bob@gmail.com
     @GetMapping("/search")
     public ResponseEntity<List<User>> searchUsers(@RequestParam String name,
-    @RequestParam (required = false,defaultValue = "bob")String email
+    @RequestParam (required = false,defaultValue = "kandwala119@gmail.com")String email
     )
     {
         System.out.println(name);

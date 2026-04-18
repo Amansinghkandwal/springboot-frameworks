@@ -6,7 +6,7 @@ server:
 
 logging:
   level:
-    root: WARN
+    root: ERROR
 #You can control the logging level
 #go to spring website and check appendix -> common application properties to check all the properties
 

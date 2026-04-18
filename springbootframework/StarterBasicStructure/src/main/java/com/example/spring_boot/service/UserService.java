@@ -6,18 +6,22 @@ import com.example.spring_boot.exceptions.UserNotFoundException;
 import com.example.spring_boot.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Service
 public class UserService {
 
     private final Logger logger= LoggerFactory.getLogger(UserService.class);
     private Map<Integer, User> userDb = new HashMap<>();
+
     public User createUser(User user)
     {
+
         if(userDb.containsKey(user.getId())) {
            throw new UserAlreadyPresent("User with id "+user.getId() +" already exists");
         }

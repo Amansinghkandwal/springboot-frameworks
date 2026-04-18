@@ -5,8 +5,6 @@ import com.example.spring_boot.model.User;
 import org.springframework.web.bind.annotation.*;
 
 
-
-
 //jackson library is converting this mapping into JSON format
 //Browser -> /user -> created POJO -> spring-boot  ->Json ->JSON output
 //api/user or api/user/1 or /api/users -> @RequestMapping("/api") in class level
@@ -18,14 +16,13 @@ public class HelloController {
     public String sayHello()
     {
         return "Hello World";
-
     }
 
     //@GetMapping("/user")
     @RequestMapping(value="/user",method = RequestMethod.GET)
     public User getUser()
     {
-        User user= new User("example@gmail.com",1,"Bob");
+        User user= new User(1,"Bob","example@gmail.com");
         return user;
         //jackson needs user field access and that can be possible by getters
     }
