@@ -76,6 +76,5 @@ public class UserService {
                 .filter(u->u.getName().equalsIgnoreCase(name))
                 .filter(u->u.getEmail().equalsIgnoreCase(email))
                 .toList();
-
     }
 }
