@@ -57,7 +57,7 @@ public class UserController {
            return ResponseEntity.noContent().build();
        }
 
-       return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+       return ResponseEntity.status(HttpStatus.OK).build();
    }
 
    @GetMapping

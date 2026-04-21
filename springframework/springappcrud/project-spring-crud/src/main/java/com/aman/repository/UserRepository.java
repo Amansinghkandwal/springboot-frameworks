@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class UserRepository {
+public class UserRepository{
 
     private DatabaseConnection db;
 

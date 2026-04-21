@@ -2,7 +2,9 @@ package com.example.jpa.service;
 
 import com.example.jpa.UserClassSpringBoot;
 import com.example.jpa.repository.UserRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserService {
     UserRepository userRepository;
 
